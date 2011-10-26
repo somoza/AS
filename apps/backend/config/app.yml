@@ -1,0 +1,42 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+all:
+  boxie_admin:
+    theme: blue
+  sf_guard_plugin:
+    success_signin_url: @homepage
+    success_signout_url: @homepage
+  menus:
+    admin_menu:
+      name: Admin Menu
+      attributes: { class: "clearfix"  }
+      requires_auth: true
+      children:
+        package:
+          label: Paquetes
+          route: package
+          link_options: { class: "h-ico ico-edit" }
+          credentials: [admin]
+        client:
+          label: Clientes
+          route: client
+          link_options: { class: "h-ico ico-users" }
+          credentials: [admin]
+        teoric_course:
+          label: Cursos teóricos
+          route: teoric_course
+          link_options: { class: "h-ico ico-edit" }
+          credentials: [admin]
+        cash:
+          label: Caja
+          route: cash
+          link_options: { class: "h-ico ico-cash" }
+          credentials: [[admin, company]]
+        reports:
+          label: Reportes
+          route: report
+          link_options: { class: "h-ico ico-send" }
+          credentials: [[admin, company]]
+  admin:
+    title: Academia de Conductores Stop

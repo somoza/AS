@@ -1,0 +1,51 @@
+generator:
+  class: mrBoxieAdminGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 boxie_admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    i18n:                  true
+    sortable:              false
+    actions_base_class:    sfActions
+    use_security_yaml_credentials: false
+
+    config:
+      actions:  ~
+      fields:
+        created_at: { date_format: d/m/Y H:i:s }
+        updated_at: { date_format: d/m/Y H:i:s }
+        last_login: { date_format: d/m/Y H:i:s }
+        company: { label: Empresa }
+        health_insurance: { label: Obra Social }
+        birthdate: { label: Fecha de nacimiento }
+      list:
+        actions:
+          new: ~
+        title: User list
+        display: [first_name, last_name, username, email_address, is_active, company, health_insurance, birthdate]
+        object_actions:
+          edit:
+            class: ico edit
+            icon: edit.png
+          delete:
+            class: ico delete
+            icon: delete.png
+          pay:
+            class: ico cash
+            icon: cash.png
+      filter:   ~
+      form:
+        class: sfGuardUserAdminForm
+      edit:
+        title: Editando usuario "%%name%%"
+      new:
+        title: Nuevo usuario
+      show:
+        title: Mostrando usuario "%%name%%"
+      export:
+        title: Exportar usuarios

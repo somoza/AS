@@ -1,0 +1,6 @@
+all:
+  driver:
+    class: fpErrorNotifierDriverMailNative
+    options:
+      to: 'matiasalejoroldan@gmail.com, julian@animus.com.ar'
+      from: 'developmentserver1@gmail.com'

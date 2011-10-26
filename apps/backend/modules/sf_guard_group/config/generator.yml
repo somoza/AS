@@ -1,0 +1,42 @@
+generator:
+  class: mrBoxieAdminGenerator
+  param:
+    model_class:           sfGuardGroup
+    theme:                 boxie_admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_group
+    with_doctrine_route:   true
+    i18n:                  true
+    sortable:              false
+    actions_base_class:    sfActions
+    use_security_yaml_credentials: false
+
+    config:
+      actions:
+      fields:
+        created_at: { date_format: d/m/Y H:i:s }
+        updated_at: { date_format: d/m/Y H:i:s }
+        nb_users: { label: Total de usuarios }
+      list:
+        object_actions:
+          edit:
+            class: ico edit
+            icon: edit.png
+        actions: []
+        batch_actions: []
+        title: Group list
+        display: [=name, description, nb_users]
+      filter:
+        class: false
+      form:     ~
+      edit:
+        title: Editando grupo "%%name%%"
+        actions: [save, cancel]
+      new:     ~
+      show:
+        title: Showing group "%%name%%"
+      export:
+        title: Export groups

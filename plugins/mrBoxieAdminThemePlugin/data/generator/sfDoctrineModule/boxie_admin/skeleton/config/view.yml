@@ -1,0 +1,10 @@
+all:
+  stylesheets:
+    - /mrBoxieAdminThemePlugin/css/themes/<?php echo sfConfig::get("app_boxie_admin_theme"); ?>/styles.css: { media: 'screen, projection, tv' }
+    - /mrBoxieAdminThemePlugin/css/ie_7.css: { media: 'screen, projection, tv', condition: 'lte IE 7.0' }
+    - /mrBoxieAdminThemePlugin/css/ie_8.css: { media: 'screen, projection, tv', condition: 'IE 8.0' }
+  javascripts:
+    - /mrBoxieAdminThemePlugin/js/jquery-1.3.2.min.js
+    - /mrBoxieAdminThemePlugin/js/ddpng.js: { condition: 'lte IE 6.0' }
+    - /mrBoxieAdminThemePlugin/js/ie.js: { condition: 'lte IE 6.0' }
+    - /mrBoxieAdminThemePlugin/js/boxie-admin.js]

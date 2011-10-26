@@ -1,0 +1,92 @@
+sf_orm_breadcrumbs:
+  admin:
+    index:
+      - { name: Home, route: homepage }
+    editAccount:
+      - { name: Home, route: homepage }
+      - { name: Edit account, route: edit_account }
+  sf_guard_user:
+    index:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+    new:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Create, route: sf_guard_user_new }
+    create:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Create, route: sf_guard_user_new }
+    edit:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Edit, route: sf_guard_user_edit, model: true }
+    update:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Edit, route: sf_guard_user_update, model: true }
+    show:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Show, route: sf_guard_user_show, model: true }
+    export:
+      - { name: Home, route: homepage }
+      - { name: Users, route: sf_guard_user }
+      - { name: Export, route: sf_guard_user_export }
+  sf_guard_group:
+    index:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+    new:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Create, route: sf_guard_group_new }
+    create:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Create, route: sf_guard_group_new }
+    edit:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Edit, route: sf_guard_group_edit, model: true }
+    update:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Edit, route: sf_guard_group_update, model: true }
+    show:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Show, route: sf_guard_group_show, model: true }
+    export:
+      - { name: Home, route: homepage }
+      - { name: Groups, route: sf_guard_group }
+      - { name: Export, route: sf_guard_group_export }
+  sf_guard_permission:
+    index:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+    new:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Create, route: sf_guard_permission_new }
+    create:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Create, route: sf_guard_permission_new }
+    edit:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Edit, route: sf_guard_permission_edit, model: true }
+    update:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Edit, route: sf_guard_permission_update, model: true }
+    show:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Show, route: sf_guard_permission_show, model: true }
+    export:
+      - { name: Home, route: homepage }
+      - { name: Permissions, route: sf_guard_permission }
+      - { name: Export, route: sf_guard_permission_export }
+

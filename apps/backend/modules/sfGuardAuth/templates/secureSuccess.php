@@ -1,0 +1,1 @@
+<?php echo __("Sorry, you do not have permission to view this content"); ?>

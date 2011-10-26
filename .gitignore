@@ -1,0 +1,15 @@
+cache/*
+!cache/.ignore
+log/*
+!log/.ignore
+config/databases.yml
+web/uploads/*
+data/sql
+data/search/
+lib/filter/doctrine/base/Base*
+lib/form/doctrine/base/Base*
+lib/model/doctrine/base/Base*
+nbproject/*
+Stop.komodoproject
+_mat/*
+.komodotools/*

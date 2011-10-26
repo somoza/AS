@@ -1,0 +1,105 @@
+report:
+  url:   /report
+  param: { module: report, action: index }
+    
+teoric_course:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                TeoricCourse
+    module:               teoric_course
+    prefix_path:          /teoric_course
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+
+package:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                Package
+    module:               package
+    prefix_path:          /package
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+
+client:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                Client
+    module:               client
+    prefix_path:          /client
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+
+cash:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                cash
+    module:               cash
+    prefix_path:          /cash
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+
+sf_guard_permission:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                sfGuardPermission
+    module:               sf_guard_permission
+    prefix_path:          /sf_guard_permission
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+    with_show: false
+
+sf_guard_group:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                sfGuardGroup
+    module:               sf_guard_group
+    prefix_path:          /sf_guard_group
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+    with_show: false
+
+sf_guard_user:
+  class: mrBoxieAdminRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               sf_guard_user
+    prefix_path:          /sf_guard_user
+    column:               id
+    with_wildcard_routes: true
+    with_export:          true
+    with_show: false
+
+sf_guard_forgot_password:
+  url: /guard/forgot_password
+  param: { module: sfGuardForgotPassword, action: index }
+
+sf_guard_forgot_password_change:
+  class: sfDoctrineRoute
+  url: /guard/forgot_password/:unique_key
+  param: { module: sfGuardForgotPassword, action: change }
+  options: { model: sfGuardForgotPassword, type: object }
+  requirements:
+    sf_method: [get, post]
+
+edit_account:
+  url: /user/edit_account
+  param: { module: admin, action: editAccount }
+  requirements:
+    sf_method: [post, get]
+    
+homepage:
+  url:   /
+  param: { module: admin, action: index }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

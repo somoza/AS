@@ -1,0 +1,90 @@
+#########################
+######## USUARIOS #######
+#########################
+
+sfGuardUserProfile:
+  options:
+    comment: 'Perfil de usuario'
+  columns:
+    sf_guard_user_id: { type: integer, notnull: true }
+    company_id: { type: integer, comment: 'Empresa a la que pertenece, no es obligatorio'}
+    health_insurance_id: { type: integer, comment: 'Obra social a la que está asociado, no es obligatorio porque depende del tipo de usuario' }
+    birthdate: { type: date, comment: 'Fecha de nacimiento para calcular precio en base a la edad' }
+  relations:
+    User:
+      onDelete: CASCADE
+      class: sfGuardUser
+      type: one
+      foreignType: one
+      foreignAlias: Profile
+    Company:
+      onDelete: CASCADE
+      foreignAlias: Profile
+    HealthInsurance:
+      onDelete: CASCADE
+      foreignAlias: Profiles
+      
+Client:
+  options:
+    comment: 'Clientes'
+  columns:
+    name: { type: string(64), notnull: true }
+    lastname: { type: string(64), notnull: true }
+    email: { type: string(150), notnull: true }
+    phone: { type: string(64), notnull: true }
+    cell_phone: { type: string(64), notnull: true }
+    
+Package:
+  options:
+    comment: 'Paquetes'
+  columns:
+    name: { type: string(64), notnull: true }
+    teoric_course_id: { type: integer, notnull: true }
+    price: { type: decimal, notnull: true }
+    practices_number: { type: integer, notnull: true }
+    description: { type: string(255) }
+  relations:
+    TeoricCourse:
+      onDelete: CASCADE
+      foreignAlias: Packages
+    
+TeoricCourse:
+  options:
+    comment: 'Cursos Teoricos asociados a un paquetes'
+  columns:
+    name: { type: string(64), notnull: true }
+    price: { type: decimal, notnull: true }
+    practices_number: { type: integer, notnull: true }
+    description: { type: string(255) }
+    
+Cash:
+  options:
+    comment: 'Caja'
+  actAs:
+    Timestampable: ~
+  columns:
+    course_client_id: { type: integer, notnull: false }
+    type: { type: enum, values:['Ingreso', 'Egreso'] }
+    amount: { type: decimal, scale: 2, notnull: true }
+    concept: { type: enum, values:['Gastos de Oficina', 'Pago de servicios', 'Pago de Honorarios', 'Capacitación', 'Alquiler del Salón', 'Sueldos', 'Gastos varios', 'Ingresos varios', 'Donaciones'] }
+  relations:
+    CourseClient:
+      local: course_client_id
+      onDelete: CASCADE
+      foreignAlias: Payments
+      
+CourseClient:
+  options:
+    comment: 'Pivot paquete - cliente'
+  actAs:
+    Timestampable: ~
+  columns:
+    client_id: { type: integer, notnull: true }
+    package_id: { type: integer, notnull: true }
+  relations:
+    Client:
+      onDelete: CASCADE
+      foreignAlias: CourseClients
+    Package:
+      onDelete: CASCADE
+      foreignAlias: CourseClients

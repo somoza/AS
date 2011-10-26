@@ -1,0 +1,19 @@
+prod:
+  content_cleaner:
+    enabled: true
+
+all:
+  developer_email: matiasalejoroldan@gmail.com
+  sf_guard_plugin:
+    default_from_email: developmentserver1@gmail.com
+    default_from_name: Development Server
+  groups:
+    admin: 1
+    teacher: 2
+    student: 3
+    adscript: 4
+    company: 5
+  imap:
+    hoststring: '{pop3.juliansomoza.com.ar:143/novalidate-cert}INBOX'
+    username: prueba@juliansomoza.com.ar
+    password: prueba

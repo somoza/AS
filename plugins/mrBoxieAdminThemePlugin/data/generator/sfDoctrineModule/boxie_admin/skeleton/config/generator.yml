@@ -1,0 +1,22 @@
+generator:
+  class: mrBoxieAdminGenerator
+  param:
+##CONFIG##
+
+    config:
+      actions:  ~
+      fields:   ~
+      list:
+        object_actions:
+          edit:
+            class: ico edit
+            icon: edit.png
+          delete:
+            class: ico delete
+            icon: delete.png
+      filter:   ~
+      form:     ~
+      edit:     ~
+      new:      ~
+      show:     ~
+      export:   ~

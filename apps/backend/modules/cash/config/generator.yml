@@ -1,0 +1,40 @@
+generator:
+  class: mrBoxieAdminGenerator
+  param:
+    model_class:           cash
+    theme:                 boxie_admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          cash
+    with_doctrine_route:   true
+    i18n:                  true
+    sortable:              false
+    actions_base_class:    sfActions
+    use_security_yaml_credentials: false
+
+    config:
+      actions:  ~
+      fields:
+        amount: { label: Monto}
+        Type: { label: Operación }
+        CashType: { label: Tipo de pago }
+      list:
+        title: Listado de ingresos
+        object_actions:
+          edit:
+            class: ico edit
+            icon: edit.png
+          delete:
+            class: ico delete
+            icon: delete.png
+        display: [Type, CashType, amount, created_at]
+      filter:   ~
+      form:     ~
+      edit:
+        title: Editar ingreso
+      new:
+        title: Crear ingreso
+      show:     ~
+      export:   ~

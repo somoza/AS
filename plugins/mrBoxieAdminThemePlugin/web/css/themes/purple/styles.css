@@ -1,0 +1,63 @@
+/* basic links properties */
+a.alt,
+.altbox .content a {border-color: #f5d6f7; color: #8e1087;}
+a:hover, a:active, a:focus,
+a.alt:hover, a.alt:active, a.alt:focus,
+.altbox .content a:hover, .altbox .content a:active, .altbox .content a:focus {border-color: #f7cffa; color: #b93ab9;}
+
+/* layout
+======================================*/
+
+#header {border-bottom: 1px solid #e886ed; background: #8d0f86 url("header.png") repeat-x; min-height: 100px;}
+#header #logo a.home {border: 0; display: block; width: 100%; height: 100%; overflow: hidden; text-shadow: #5d0058 1px 1px 0; font-size: 180%; font-weight: bold; font-style: italic; color: #fff;}
+#header #userbox {background: url("userbox.png") no-repeat; position: relative; float: right; width: 225px; min-height: 65px; line-height: 1.3;}
+#header #userbox a {border-color: #ba5db7; color: #fddaff;}
+#header #userbox a:hover,
+#header #userbox a:active,
+#header #userbox a:focus {border-color: #cc78ca; color: #fff;}
+#header #userbox a#logout .ir {background: url("logout.png");}
+
+/* navigation stripe */
+#nav {border-top: 1px solid #6b0065; border-bottom: 1px solid #999; background: #fff;}
+#nav #h-wrap ul a:hover,
+#nav #h-wrap ul a:focus,
+#nav #h-wrap ul a:active {color: #b93ab9;}
+#nav #h-wrap h2 .h-arrow {background: url("h-arrow.gif") 0 0 no-repeat; position: absolute; top: 18px; right: 19px; display: block; width: 11px; height: 15px; overflow: hidden;}
+
+/* content styling
+--------------------------------------*/
+
+/* stylish buttons with rounded corners */
+.button {border: 1px solid #6b0065; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #8f1088 url("button.gif") repeat-x; padding: 5px 9px 5px; text-shadow: #5d0058 1px 1px 0; color: #fff; cursor: pointer;}
+/* alternative colors */
+.altbox .button:hover,
+.altbox .button:focus,
+.altbox .button:active {border-color: #6b0065; background: #8f1088 url("button.gif") repeat-x; text-shadow: #5d0058 1px 1px 0; color: #fff;}
+.altbutton:hover,
+.altbutton:focus,
+.altbutton:active {border-color: #6b0065; background: #8f1088 url("button.gif") repeat-x; text-shadow: #5d0058 1px 1px 0; color: #fff;}
+.altbox .altbutton {border: 1px solid #6b0065; background: #8f1088 url("button.gif") repeat-x; text-shadow: #5d0058 1px 1px 0;}
+
+.altbox .header {border-top-color: #c040c1; background: #8e1087 url("altheaderbox.png") repeat-x;}
+.altbox .header h3 {text-shadow: #5d0058 0 1px 0;}
+.altbox .header ul a {background-color: #e071e4;}
+.altbox .header ul a.active,
+.altbox .header ul a:hover,
+.altbox .header ul a:focus,
+.altbox .header ul a:active {background: #fff url("/mrBoxieAdminThemePlugin/images/altheadertab.png") repeat-x; color: #8e1087;}
+
+/* boxes' content types �?? tabular */
+.altbox .content table tr.even th,
+.altbox .content table tr.even td {background: #feefff;}
+.altbox .content table tbody {color: #6b0065;}
+.box .content table a.ico-comms {border: 0; background: url("ico-tablecomms.gif") 50% 60% no-repeat; padding: 10px; color: #fff;}
+
+/* boxes' content types �?? simple list */
+.altbox .content table tr.even th,
+.altbox .content ul.simple li.even {background: #feefff;}
+
+.altbox .content .grid .line {border-bottom-color: #efcff1;}
+.altbox .content .grid .even {background: #feefff;}
+.pagination a:hover,
+.pagination a:active,
+.pagination a:focus {color: #b93ab9 !important;}

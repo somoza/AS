@@ -1,0 +1,36 @@
+generator:
+  class: mrBoxieAdminGenerator
+  param:
+    model_class:           sfGuardPermission
+    theme:                 boxie_admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_permission
+    with_doctrine_route:   true
+    i18n:                  true
+    sortable:              false
+    actions_base_class:    sfActions
+    use_security_yaml_credentials: false
+
+    config:
+      actions:  ~
+      fields:
+        created_at: { date_format: d/m/Y H:i:s }
+        updated_at: { date_format: d/m/Y H:i:s }
+      list:
+        title: Permission list
+        display: [=name, description]
+        actions:
+          new: ~
+      filter:   ~
+      form:     ~
+      edit:
+        title: Editing permission "%%name%%"
+      new:
+        title: New permission
+      show:
+        title: Showing permission "%%name%%"
+      export:
+        title: Export permissions
